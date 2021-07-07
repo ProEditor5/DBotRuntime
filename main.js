@@ -19,7 +19,10 @@ for(const file of serverFiles){
 	const command = require(`./commands/server/${file}`);
 	client.servercmds.set(command.name, command);
 };
-//command handler
+client.once('ready', () => {
+	console.log("DBOT ONLINE!");
+});
+//command handlerw
 client.on('message', message => {
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length).split(/ +/);

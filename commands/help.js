@@ -14,7 +14,7 @@ module.exports = {
 		{name:'`-clear <amount>`',value:'Clears a certain amount of messages.', inline: true},
 		{name:'\u200B',value:"\u200B", inline: true},
 		{name: "SERVER-ONLY COMMANDS:",value: "The following commands will not work in DM's."},
-		{name:'`-invite <uses>`',value:'Generates an invite.', inline: true},
+		{name:'`-invite`',value:'Generates an invite.', inline: true},
 		{name:'`-kick <@user>`',value:"Kick specified user.", inline: true},
 		{name:'`-ban <@user>`',value:"Bans specified user.", inline: true})
 		//finishes and sends message

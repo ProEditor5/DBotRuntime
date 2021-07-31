@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '-';
 const theme = "#7289da";
+const rolename = ':video_game:PARTICIPANTS🖦';
 const fs = require('fs');
 require('dotenv').config();
 //read commands
@@ -22,7 +23,7 @@ for(const file of serverFiles){
 client.once('ready', () => {
 	console.log("DBOT ONLINE!");
 });
-//command handlerw
+//command handler
 client.on('message', message => {
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length).split(/ +/);
@@ -40,5 +41,9 @@ client.on('message', message => {
 			client.servercmds.get(command).execute(message, args, Discord);
 		}
 	}
-});//Just an easter egg, don't mind me ;)
+});
+//default roles
+client.on('guildMemberAdd', (guildMember) => {
+	guildMember.addRole(guildMember.guild.roles.find(role => role.name === rolename));
+ });
 client.login(process.env.DISCORD_TOKEN);

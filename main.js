@@ -26,7 +26,7 @@ client.once('ready', () => {
 });
 //default roles
 client.on('guildMemberAdd', (guildMember) => {
-	guildMember.roles.add(guildMember.guild.roles.cache.find(role => role.name === rolename));
+	guildMember.roles.add(guildMember.guild.roles.cache.find(role => role.id == '852972969155625000'));
 });
 //command handler
 client.on('message', message => {

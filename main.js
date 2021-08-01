@@ -20,8 +20,13 @@ for(const file of serverFiles){
 	const command = require(`./commands/server/${file}`);
 	client.servercmds.set(command.name, command);
 };
+//ready message
 client.once('ready', () => {
 	console.log("DBOT ONLINE!");
+});
+//default roles
+client.on('guildMemberAdd', (guildMember) => {
+	guildMember.roles.add(guildMember.guild.roles.cache.find(role => role.name === rolename));
 });
 //command handler
 client.on('message', message => {
@@ -42,8 +47,4 @@ client.on('message', message => {
 		}
 	}
 });
-//default roles
-client.on('guildMemberAdd', (guildMember) => {
-	guildMember.addRole(guildMember.guild.roles.find(role => role.name === rolename));
- });
 client.login(process.env.DISCORD_TOKEN);

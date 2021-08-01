@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '-';
 const theme = "#7289da";
-const rolename = ':video_game:PARTICIPANTS🖦';
+const rolename = ':video_game:PARTICIPANTS';
 const fs = require('fs');
 require('dotenv').config();
 //read commands
